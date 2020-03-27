@@ -3,7 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.5.1'
 gem 'mongoid', '~> 6.1.0'
-gem 'bootstrap', '~> 4.0.0.alpha3'
+gem 'bootstrap', '~> 4.3.1'
 gem 'jquery-rails', '~> 4.3', '>= 4.3.3'
 gem 'sprockets-rails', '~> 3.2', '>= 3.2.1'
 gem 'rails-ujs', '~> 0.1.0'
