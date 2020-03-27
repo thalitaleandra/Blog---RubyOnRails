@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+<div class="container">
+<div class="row">
+<!-- Blog Entries Column -->
+<div class="col-md-8">
+<h1 class="my-4">A Blog About Technology</h1>
+<h2 class="my-4"><small>Lets Go!</small></h2>
+<div class="card mb-4">
+<div class="card-body">
+<% @posts.each do |post| %>
+  <% if @posts.any? %>
+       <%= image_tag post.image.url(:medium) %>
+   <% end %>
+  <h2 class="card-title"> <%= link_to post.title, post %> </h2>
+  <p class="card-text"> <%= post.description %> </p> 
+         <% if user_signed_in? %>
+  <%= link_to 'Edit', edit_post_path(post) %> |
+  <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %> |
+      <% end %>
+ <a href="#" class="btn btn-primary"> <%= link_to 'See More', post %></a>
+ <div class="card-footer text-muted">
+  Posted on March 1, 2020 by
+  <a href="#">Author</a>
+</div>
+  <% end %>
+</div>
+</div>
+<ul class="pagination justify-content-center mb-4">
+  <li class="page-item">
+    <a class="page-link" href="#">&larr; Older</a>
+  </li>
+  <li class="page-item disabled">
+    <a class="page-link" href="#">Newer &rarr;</a>
+  </li>
+</ul>
+</div>
+
+
+
